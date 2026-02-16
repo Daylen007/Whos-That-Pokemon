@@ -43,6 +43,10 @@ if "message" not in st.session_state:
     st.session_state.message = ""
 if "message_type" not in st.session_state:
     st.session_state.message_type = ""
+if "input_counter" not in st.session_state:
+    st.session_state.input_counter = 0
+if "prev_guess" not in st.session_state:
+    st.session_state.prev_guess = ""
 
 # ============================================================================
 # FUNCTIONS
