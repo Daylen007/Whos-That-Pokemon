@@ -161,7 +161,7 @@ with col1:
         st.rerun()
 
 with col2:
-    if st.button("🔄 Reset Score"):
+    if st.button("Reset Score"):
         st.session_state.score = 0
         st.session_state.attempts = 0
         new_pokemon()
@@ -210,17 +210,13 @@ guess = st.text_input(
 )
 
 # Buttons (outside form)
-col1, col2 = st.columns(2)
-with col1:
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
     if st.button("✓ Submit Answer", use_container_width=True, type="primary"):
         if guess:
             check_answer(guess)
+            st.session_state.input_counter += 1
             st.rerun()
-
-with col2:
-    if st.button("🎲 New Pokémon", use_container_width=True):
-        new_pokemon()
-        st.rerun()
 
 # Footer
 st.markdown("---")
